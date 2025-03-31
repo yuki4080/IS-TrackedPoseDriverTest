@@ -20,7 +20,8 @@ MonoBehaviour:
     rid: 6294468368456745198
   m_OverrideGlobalSceneList: 0
   m_Scenes: []
-  m_ScriptingDefines: []
+  m_ScriptingDefines:
+  - UNITY_OPENXR
   m_PlayerSettingsYaml:
     m_Settings: []
   references:

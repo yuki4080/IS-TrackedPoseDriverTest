@@ -476,6 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CardboardStartup: {fileID: 3302146713574641438, guid: c50528d84a34cf14fb4ccd7c8ef6d6bc, type: 3}
+  OpenXRStartup: {fileID: 7385774423344494381, guid: 6798933cb42f609468001c8592e7c2b3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

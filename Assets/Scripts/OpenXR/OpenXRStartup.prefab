@@ -44,3 +44,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df74a357060a0e4e8e1128854da54b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleVR:
+    m_Name: Toggle VR
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 50ba9232-483a-4e6c-b17e-e148b221b4ad
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 865ae212-73f6-440a-a81d-5419b92340b4
+      m_Path: <XRController>/{PrimaryButton}
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Toggle VR
+      m_Flags: 0
+    m_Flags: 0
