@@ -1,22 +1,43 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.XR.Management;
 
 public class OpenXRStartup : MonoBehaviour
 {
+    private Entry entry;
+    private bool isVREnabled = false;
+
     void Start()
     {
-        Debug.Log("Initializing XR...");
-        XRGeneralSettings.Instance.Manager.InitializeLoader();
+        entry = FindFirstObjectByType<Entry>();
+
+        StartCoroutine(InitializeVR());
+    }
+
+    public IEnumerator InitializeVR()
+    {
+        if (isVREnabled) yield break;
+
         if (XRGeneralSettings.Instance.Manager.activeLoader == null)
         {
-            Debug.LogError("Initializing XR Failed.");
+            yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
         }
-        else
+
+        if (XRGeneralSettings.Instance.Manager.activeLoader != null)
         {
             Debug.Log("Starting XR...");
             XRGeneralSettings.Instance.Manager.StartSubsystems();
             Debug.Log("XR started.");
+
+            isVREnabled = true;
+
+            entry.initialCamera.enabled = false;
+            entry.vrCamera.enabled = true;
+            entry.pcCamera.enabled = true;
+        }
+        else
+        {
+            Debug.LogError("Initializing XR Failed.");
         }
     }
 }

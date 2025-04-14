@@ -24,6 +24,8 @@ using UnityEngine;
 /// </summary>
 public class CardboardStartup : MonoBehaviour
 {
+    private Entry entry;
+
     /// <summary>
     /// Start is called before the first frame update.
     /// </summary>
@@ -32,6 +34,11 @@ public class CardboardStartup : MonoBehaviour
         // Configures the app to not shut down the screen and sets the brightness to maximum.
         // Brightness control is expected to work only in iOS, see:
         // https://docs.unity3d.com/ScriptReference/Screen-brightness.html.
+        entry = FindFirstObjectByType<Entry>();
+        entry.initialCamera.enabled = false;
+        entry.vrCamera.enabled = true;
+        entry.pcCamera.enabled = false;
+
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Screen.brightness = 1.0f;
 
